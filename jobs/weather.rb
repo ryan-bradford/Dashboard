@@ -2,16 +2,6 @@ require 'net/http'
 require 'dotenv/load'
 require 'json'
  
-# Get a WOEID (Where On Earth ID)
-# for your location from here:
-# http://woeid.rosselliot.co.nz/
-woe_id = 3369
- 
-# Temerature format:
-# 'c' for Celcius
-# 'f' for Fahrenheit
-format = 'c'
-
 url = 'api.openweathermap.org'
 extension = '/data/2.5/weather?q=Boston,us&APPID=' + ENV['WEATHER']
 
