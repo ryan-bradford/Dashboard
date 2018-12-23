@@ -65,6 +65,7 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -72,6 +73,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   smashing
+  xml-simple
 
 BUNDLED WITH
    1.17.2
