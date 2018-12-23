@@ -54,11 +54,9 @@ end
 
 def get_travis_build_health(build_id)
   url = "https://api.travis-ci.org/repos/#{build_id}/builds?event_type=push"
-  print url
   results = get_url url
   successful_count = results.count { |result| result['result'] == 0 }
   latest_build = results[0]
-
   return {
     name: build_id,
     status: latest_build['result'] == 0 ? SUCCESS : FAILED,

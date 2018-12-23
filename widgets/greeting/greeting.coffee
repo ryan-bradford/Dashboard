@@ -1,0 +1,1 @@
+class Dashing.Greeting extends Dashing.Widget
