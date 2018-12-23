@@ -12,13 +12,12 @@ SCHEDULER.every '3600s', :first_in => 0 do |job|
     json = JSON.parse(response.body)
     quote = json['quote']
     isClosed = quote['latestSource'].eql? 'Close'
-    prevClose = quote['previousClose']
-    curClose = quote['latestPrice']
+    prevClose = quote['previousClose'].round(1)
+    curClose = quote['latestPrice'].round(1)
     change = (((curClose - prevClose) / prevClose)*100)
     change = change.round(2)
-    send_event('stock', { :company => quote['companyName'],
-                          :change => "#{change}%",
-                         :isOpen => isClosed})
+    wentDown = change < 0
+    send_event('valuation', { current: curClose, last: prevClose })
     end
 end
 
