@@ -1,0 +1,13 @@
+<h1 class="title" data-bind="name"></h1>
+
+<h3 data-bind="status"></h3>
+
+<p data-showif="show-health">
+  <strong data-bind="health"></strong>% <span class="small">of recent builds passed</span>
+</p>
+
+<p class="context-info">
+  <span data-showif="duration">Ran for <span data-bind="duration | durationFormat"></span>,</span>
+  <span data-showif="time" data-bind="time | dateFormat"></span>
+</p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>
