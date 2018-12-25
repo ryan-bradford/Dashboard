@@ -3,6 +3,10 @@ Check out http://smashing.github.io/smashing for more information.
 
 To Add:
 
+Colors to Greeting
+Merge Greeting and Weather
+Multiple Stocks/Indexes
+
 Google Calendar
 Aww Display
 Music Player

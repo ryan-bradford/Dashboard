@@ -13,7 +13,6 @@ SCHEDULER.every '3600s', :first_in => 0 do |job|
     else
       message = "Zzzzzz...."
     end
-    print message
-    send_event('greeting', { :message => message})
+    send_event('greeting', { :message => message, :hour => hour})
 end
 
