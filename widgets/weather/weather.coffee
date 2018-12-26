@@ -11,7 +11,6 @@ class Dashing.Weather extends Dashing.Widget
     # This is fired when the widget is done being rendered
 
   onData: (data) ->
-    console.log(data)
     if data.climacon
       # reset classes
       $('i.climacon').attr 'class', "climacon icon-background #{data.climacon}"
@@ -23,5 +22,4 @@ class Dashing.Weather extends Dashing.Widget
         cur_red = Math.round(night_red*percent_night + day_red*percent_day)
         cur_green = Math.round(night_green*percent_night + day_green*percent_day)
         cur_blue = Math.round(night_blue*percent_night + day_blue*percent_day)
-        console.log("rgb(#{cur_red}, #{cur_green}, #{cur_blue})")
         $(@node).css('background', "rgb(#{cur_red}, #{cur_green}, #{cur_blue})")
