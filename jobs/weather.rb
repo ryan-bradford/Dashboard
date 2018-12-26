@@ -11,10 +11,26 @@ SCHEDULER.every '36000s', :first_in => 0 do |job|
   response = http.request(Net::HTTP::Get.new(extension))
   json = JSON.parse(response.body)
   temp = 1.8*(json["main"]['temp']-273) + 32
+  time = Time.now
+  hour = time.hour + time.min/60 + time.sec/3600
+  message = ""
+  if hour > 18
+    message = "Good Night..."
+  elsif hour > 15
+    message = "Good Evening."
+  elsif hour > 11
+    message = "Good Afternoon!"
+  elsif hour > 4
+    message = "Good Morning"
+  else
+    message = "Zzzzzz...."
+  end
   send_event('weather', { :temp => temp.round,
                           :condition => json['weather'][0]['description'],
                           :title => "Boston Weather",
-                          :climacon => climacon_class(json['weather'][0]['icon'])})
+                          :climacon => climacon_class(json['weather'][0]['icon']),
+                          :message => message, 
+                          :hour => hour})
 end
 
 
@@ -57,4 +73,8 @@ def climacon_class(weather_code)
   when "50n" 
     'haze'
   end
+end
+
+SCHEDULER.every '3600s', :first_in => 0 do |job|
+  
 end
