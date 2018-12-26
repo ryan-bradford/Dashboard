@@ -2,7 +2,7 @@ night_red = 18
 night_green = 25
 night_blue = 91
 day_red = 240
-day_green = 234
+day_green = 160
 day_blue = 110
 
 class Dashing.Greeting extends Dashing.Widget

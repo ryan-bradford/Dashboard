@@ -1,6 +1,6 @@
 SCHEDULER.every '3600s', :first_in => 0 do |job|
     time = Time.now
-    hour = time.hour
+    hour = time.hour + time.min/60 + time.sec/3600
     message = ""
     if hour > 18
       message = "Good Night..."
