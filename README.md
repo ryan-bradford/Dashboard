@@ -3,7 +3,6 @@ Check out http://smashing.github.io/smashing for more information.
 
 To Add:
 
-Multiple Stocks/Indexes
 Google Calendar Support
 Make To Do Better
 
