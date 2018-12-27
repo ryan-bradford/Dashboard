@@ -6,7 +6,7 @@ url = 'api.openweathermap.org'
 extension = '/data/2.5/weather?q=Boston,us&APPID=' + ENV['WEATHER']
 
  
-SCHEDULER.every '36000s', :first_in => 0 do |job|
+SCHEDULER.every '600s', :first_in => 0 do |job|
   http = Net::HTTP.new(url)
   response = http.request(Net::HTTP::Get.new(extension))
   json = JSON.parse(response.body)

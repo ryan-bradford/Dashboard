@@ -3,19 +3,19 @@ Check out http://smashing.github.io/smashing for more information.
 
 To Add:
 
-Merge Greeting and Weather
 Multiple Stocks/Indexes
+Google Calendar Support
+Make To Do Better
 
-Google Calendar
+Possible:
+
 Aww Display
 Music Player
 Hooks to POST from Client
     Temperature
     Camera
     Movement Sensor
-To-do IST
 GCloud Things
-Better Stock Widget
 Buttons that can do things
 
 IDEA:

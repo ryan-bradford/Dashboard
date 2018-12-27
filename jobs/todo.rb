@@ -4,7 +4,7 @@ require 'todoist'
 
 @client = Todoist::Client.create_client_by_login(ENV['TODOIST_USER'], ENV['TODOIST_PASS'])
 
-SCHEDULER.every '36000s', :first_in => 0 do |job|
+SCHEDULER.every '600s', :first_in => 0 do |job|
     items = @client.sync_items.collection
     todo = []
     items.each do |x|

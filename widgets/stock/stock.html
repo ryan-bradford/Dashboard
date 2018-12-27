@@ -1,0 +1,16 @@
+<h1 class="title" data-bind="title"></h1>
+
+<div class="content">
+    <ol>
+        <div data-foreach-stock="stocks">
+          <div class="change-rate">
+            <p class="name" data-bind="stock.name"></p>
+            <p class="value" data-bind="stock.current | shortenedNumber | prepend prefix | append suffix"></p>
+            <i data-bind-class="arrow"></i>
+            <span data-bind="difference"></span>
+          </div>
+        </div>
+      </ol>
+</div>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
