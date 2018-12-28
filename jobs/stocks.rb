@@ -3,8 +3,6 @@ require 'dotenv/load'
 require 'json'
  
 def getStock(id, name) 
-    puts id
-    puts name
     uri = URI("https://api.iextrading.com/1.0/stock/#{id}/batch?types=quote")#,chart&range=1m&last=10')
     Net::HTTP.start(uri.host, uri.port,
     :use_ssl => uri.scheme == 'https') do |http|
