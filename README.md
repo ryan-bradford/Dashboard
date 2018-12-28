@@ -3,11 +3,11 @@ Check out http://smashing.github.io/smashing for more information.
 
 To Add:
 
-Google Calendar Support
 Make To Do Better
 
 Possible:
 
+The Daily Imbedded
 Aww Display
 Music Player
 Hooks to POST from Client
