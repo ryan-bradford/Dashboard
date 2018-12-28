@@ -2,8 +2,10 @@
 # It includes jquery & batman for you.
 #= require dashing.js
 
+#= require moment.js
 #= require_directory .
 #= require_tree ../../widgets
+#= require moment-timezone-with-data.js
 
 console.log("Yeah! The dashboard has started!")
 
