@@ -1,6 +1,7 @@
 require 'icalendar'
+require 'dotenv/load'
 
-ical_url = 'https://calendar.google.com/calendar/ical/ryanbradford333%40gmail.com/private-f615b63cb8dc935cc13d15ce78b22b5d/basic.ics'
+ical_url = ENV['CALENDAR']
 uri = URI ical_url
 
 SCHEDULER.every '15s', :first_in => 4 do |job|
