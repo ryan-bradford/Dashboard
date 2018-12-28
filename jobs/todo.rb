@@ -12,7 +12,6 @@ SCHEDULER.every '20s', :first_in => 0 do |job|
         date_completed = x[1].date_completed
         is_deleted = x[1].is_deleted
         if date == Date.today && !(date_completed.instance_of? String) && is_deleted == 0
-            puts x[1]
             todo.push({:content => x[1].content})
         end
     end

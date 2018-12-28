@@ -6,8 +6,9 @@
           <div class="change-rate">
             <p class="name" data-bind="stock.name"></p>
             <p class="value" data-bind="stock.current | shortenedNumber | prepend prefix | append suffix"></p>
-            <i data-bind-class="arrow"></i>
-            <span data-bind="difference"></span>
+            <i data-bind-class="stock.icon"></i>
+            <span class="percent" data-bind="stock.change | append suffix"></span>
+            <p class="name" >%</p>
           </div>
         </div>
       </ol>
