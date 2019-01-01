@@ -4,7 +4,7 @@ require 'json'
 placeholder = '/assets/images/placeholder.gif'
 
 SCHEDULER.every '360s', first_in: 0 do |job|
-    uri = URI("https://www.reddit.com/r/aww.json")
+    uri = URI("https://www.reddit.com/r/rarepuppers.json")
     Net::HTTP.start(uri.host, uri.port,
     :use_ssl => uri.scheme == 'https') do |http|
         request = Net::HTTP::Get.new uri
