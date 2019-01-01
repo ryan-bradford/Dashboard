@@ -11,7 +11,6 @@ SCHEDULER.every '360s', first_in: 0 do |job|
         request['User-agent'] = 'Ryan Dash'
         response = http.request request # Net::HTTPResponse object
         json = JSON.parse(response.body)
-        puts json
         if json['data']['children'].count <= 0
             send_event('aww', image: placeholder)
         else

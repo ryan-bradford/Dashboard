@@ -4,6 +4,10 @@ Check out http://smashing.github.io/smashing for more information.
 To Add:
 
 Make To Do Better
+Add formatting on mobile
+Fix formatting on desktop
+Change subreddit to something better
+Switch libraries to some NPM or other version manager
 
 Possible:
 
