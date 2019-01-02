@@ -10,10 +10,21 @@
 console.log("Yeah! The dashboard has started!")
 
 Dashing.on 'ready', ->
-  Dashing.widget_margins ||= [5, 5]
-  Dashing.widget_base_dimensions ||= [300, 360]
-  Dashing.numColumns ||=4
-
+  height = $(window).height() - 5
+  width = $(window).width()
+  if height > width
+    Dashing.widget_margins ||= [5, 5]
+    Dashing.numColumns ||=2
+    width -= 15
+    height -= 25
+    Dashing.widget_base_dimensions ||= [width/2, height/4]
+  else
+    Dashing.widget_margins ||= [5, 5]
+    Dashing.numColumns ||=4
+    width -= 25
+    height -= 15
+    Dashing.widget_base_dimensions ||= [width/Dashing.numColumns, height/2]
+    
   contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
 
   Batman.setImmediate ->

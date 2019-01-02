@@ -44,7 +44,7 @@ html {
 body {
   margin: 0;
   background-color: $background-color;
-  font-size: 20px;
+  font-size: 2vw;
   color: $text-color;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -94,17 +94,17 @@ h1, h2, h3, h4, h5, p {
 h1 {
   margin-bottom: 12px;
   text-align: center;
-  font-size: 30px;
+  font-size: 3vw;
   font-weight: 400;
 }
 h2 {
   text-transform: uppercase;
-  font-size: 76px;
+  font-size: 7vw;
   font-weight: 700;
   color: $text-color;
 }
 h3 {
-  font-size: 25px;
+  font-size: 2.5vw;
   font-weight: 600;
   color: $text-color;
 }
@@ -179,7 +179,7 @@ h3 {
 }
 
 .more-info {
-  font-size: 15px;
+  font-size: .75em;
   position: absolute;
   bottom: 32px;
   left: 0;
@@ -187,7 +187,7 @@ h3 {
 }
 
 .updated-at {
-  font-size: 15px;
+  font-size: .75em;
   position: absolute;
   bottom: 12px;
   left: 0;
@@ -223,7 +223,7 @@ h3 {
   background: white;
   top: 100px;
   color: black;
-  font-size: 15px;
+  font-size: .75em;
   padding-bottom: 4px;
 
   textarea {
@@ -247,6 +247,39 @@ h3 {
 #container {
   padding-top: 5px;
 }
+
+@media only screen 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    body {
+      margin: 0;
+      background-color: $background-color;
+      font-size: 2vh;
+      color: $text-color;
+      font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      text-align: center;
+      font-size: 3vh;
+      font-weight: 400;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 5vh;
+      font-weight: 700;
+      color: $text-color;
+    }
+    h3 {
+      font-size: 3vh;
+      font-weight: 600;
+      color: $text-color;
+    }
+}
+
+
 
 
 // ----------------------------------------------------------------------------

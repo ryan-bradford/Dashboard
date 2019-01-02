@@ -7,11 +7,11 @@ $background-color:  #567783;
 // Although, for example, if you have a data sizex/sizey = "2" for your widget
 // then you might want to change this to 600px. Everything should scale
 // acoordingly.
-$clock-width:       276px;
+$clock-width:       100%;
 
 // Setting the height to the same as the width ensures we have a square shape.
 // In most (every?) cases you will want this!
-$clock-height:      $clock-width;
+$clock-height:      auto;
 
 // ----------------------------------------------------------------------------
 // Widget-analog-clock styles
@@ -28,7 +28,7 @@ $clock-height:      $clock-width;
   #clock {
     position: relative;
     width: $clock-width;
-    height: $clock-height;
+    padding-top: 100%;
     background: url(analog_clock/clockface.png);
     background-size: 100% 100%;
     list-style: none;
@@ -37,7 +37,7 @@ $clock-height:      $clock-width;
   #sec, #min, #hour {
     position: absolute;
     width: #{($clock-width / 20)};
-    height: $clock-height;
+    padding-top: 100%;
     top: 0px;
     left: #{(($clock-width / 2) - ($clock-width / 40))};
   }
