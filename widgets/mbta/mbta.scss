@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #12b0c5;
+$background-color:  #3D9970;
 $value-color:       #fff;
 
 $title-color:       rgba(255, 255, 255, 0.7);
@@ -9,20 +9,18 @@ $label-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
 // ----------------------------------------------------------------------------
-// Widget-todo styles
+// Widget-mbta styles
 // ----------------------------------------------------------------------------
-.widget-todo {
+.widget-mbta {
 
   background-color: $background-color;
   vertical-align: top;
-  width: 100%;
 
   .title {
     color: $title-color;
   }
 
   ol, ul {
-    margin: 0 15px;
     text-align: left;
     color: $label-color;
   }
@@ -31,26 +29,21 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     list-style-position: inside;
   }
 
-  li {
-    margin-bottom: 5px;
-    width: 100%;
-  }
-
   .list-nostyle {
     list-style: none;
   }
 
   .label {
     color: $label-color;
+    font-size: 1.2em;
   }
 
   .value {
+    float: right;
     margin-left: 12px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.2em;
     color: $value-color;
-    word-break: break-all;
-    white-space: normal;
-    width: 100%;
   }
 
   .updated-at {
