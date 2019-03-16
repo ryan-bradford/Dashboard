@@ -10,16 +10,16 @@ uri = URI ical_url
 ## https://api-v3.mbta.com/schedules?filter[route]=LINE&filter[start]=START&[stop]=END
 routes = [{ :name => "NEU->PRK",
             :start => "place-nuniv",
-            :stop => 'place-pktrm',
-            :line => 'Green-E'},
+            :line => 'Green-E',
+            :direction => 1},
           { :name => "KEN->PRK",
-            :start => "door-knncl-sbmain",
-            :stop => 'place-pktrm',
-            :line => 'Red'},
+            :start => "place-knncl",
+            :line => 'Red',
+            :direction => 0},
           { :name => "RUG->OAK",
-            :start => "door-rugg-columbus",
-            :stop => 'place-jaksn',
-            :line => 'Orange'}]
+            :start => "place-rugg",
+            :line => 'Orange',
+            :direction => 1}]
 
 SCHEDULER.every '15s', :first_in => 4 do |job|
   output = routes;
@@ -30,11 +30,12 @@ SCHEDULER.every '15s', :first_in => 4 do |job|
 end
 
 def getProjection(hash) 
-  uri = URI("https://api-v3.mbta.com/predictions?filter[stop]=#{hash[:stop]}&filter[start]=#{hash[:start]}&filter[route]=#{hash[:line]}&include=stop")
+  uri = URI("https://api-v3.mbta.com/predictions?filter[direction_id]=#{hash[:direction]}&filter[stop]=#{hash[:start]}&filter[route]=#{hash[:line]}")
   Net::HTTP.start(uri.host, uri.port,
   :use_ssl => uri.scheme == 'https') do |http|
     request = Net::HTTP::Get.new uri
 
+    puts uri;
     response = http.request request # Net::HTTPResponse object
     json = JSON.parse(response.body)
     data = json['data']
