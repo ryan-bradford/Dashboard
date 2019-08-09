@@ -15,7 +15,7 @@ def getIcon(cur, last)
 end
 
 def getStock(id, name) 
-    uri = URI("https://api.iextrading.com/1.0/stock/#{id}/batch?types=quote")#,chart&range=1m&last=10')
+    uri = URI("https://cloud.iexapis.com/v1/stock/#{id}/batch?types=quote&token=#{ENV['STOCK_TOKEN']}")#,chart&range=1m&last=10')
     Net::HTTP.start(uri.host, uri.port,
     :use_ssl => uri.scheme == 'https') do |http|
     request = Net::HTTP::Get.new uri
